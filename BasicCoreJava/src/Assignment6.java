@@ -5,13 +5,13 @@ public class Assignment6 {
 		
 		//Create an array to store fruits name
 		
-		String Arr[] = {"Apple","Mango","Banana","Strawberry"};
+		String[] fruits = {"Apple","Mango","Banana","Strawberry"};
 		
 		System.out.println("Fruits stored in array -");
 		
-		for(int i=0; i<4; i++)
+		for(String fruit : fruits)
 		{
-			System.out.println("Value of Arr["+i+"] is " +Arr[i]);
+			System.out.println(fruit);
 		}
 
 	}
