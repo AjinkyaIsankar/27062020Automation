@@ -15,6 +15,9 @@ public class Dynamicpolymorphism {
 		 */
 		// If you are using ref of your parent class for the object of child class then
 		// you can call the objects of parent class
+		
+		//Process in which call to an overridden method is resolved at run time
+		//Calling of this function is decided at run time
 		/*
 		 * Telephone obj4; obj4=new Telephone(); obj4.calling();
 		 * 
@@ -22,7 +25,7 @@ public class Dynamicpolymorphism {
 		 * 
 		 * obj4=new SmartPhones(); obj4.calling();
 		 */
-
+		
 		Telephone obj4 = null; // Webdriver
 
 		String browserName = "Chrome";
