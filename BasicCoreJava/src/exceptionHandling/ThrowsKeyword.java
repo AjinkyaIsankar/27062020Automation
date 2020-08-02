@@ -20,11 +20,11 @@ public class ThrowsKeyword {
 			e.printStackTrace();
 		}
 	}
-	public static void test3 throws ArithmeticException
+	//public static void test3 throws ArithmeticException
 	{
 		
 	}
-	public static void test4 throws IOException
+	//public static void test4 throws IOException
 	{
 		
 	}

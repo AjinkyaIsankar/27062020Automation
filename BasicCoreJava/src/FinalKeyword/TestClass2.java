@@ -1,10 +1,8 @@
 package FinalKeyword;
 
-public class TestClass2 {
+public class TestClass2 extends Testing {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public void test() {
+		
 	}
-
 }

@@ -57,7 +57,14 @@ public class Automobile_EnterVehicleData {
 				Thread.sleep(3000);
 				//WebElement gender=dr.findElementByXPath("//label[text()='Gender']/following::input[@id='gendermale']");
 				//gender.click();
-				dr.findElementByXPath("//label[@class=\"ideal-radiocheck-label\"]").click();
+				//Click Radio Button
+				WebElement radio=dr.findElementByXPath("//label[text()='Male']/span");
+				boolean isSelected=radio.isSelected();
+				System.out.println(isSelected);
+				
+				radio.click();
+				isSelected=radio.isSelected();
+				System.out.println(isSelected);
 				
 				Thread.sleep(3000);
 				WebElement Country=dr.findElement(By.name("Country"));
@@ -67,11 +74,33 @@ public class Automobile_EnterVehicleData {
 				dr.findElement(By.id("zipcode")).sendKeys("442305");
 				WebElement Occupation=dr.findElement(By.name("Occupation"));
 				Select sel4=new Select(Occupation);
-				sel4.selectByValue("4");
-				Thread.sleep(3000);
-				dr.findElement(By.id("other")).click();
+				sel4.selectByVisibleText("Selfemployed");
+				Thread.sleep(3000);	
+				dr.findElementByXPath("//label[contains(.,'Bungee')]/span").click();
+				//label[@class='ideal-radiocheck-label'][3]
+				//Button Click
+				dr.findElement(By.id("nextenterproductdata")).click();
+				//Page 3
+				dr.findElement(By.id("startdate")).sendKeys("09/03/2020");
+				WebElement InsuranceSum=dr.findElement(By.name("Insurance Sum"));
+				Select sel5=new Select(InsuranceSum);
+				sel5.selectByVisibleText(" 3.000.000,00");
+				WebElement MeritRating=dr.findElement(By.name("Merit Rating"));
+				Select sel6=new Select(MeritRating);
+				sel6.selectByVisibleText("Bonus 1");
+				WebElement DamageInsurance=dr.findElement(By.name("Damage Insurance"));
+				Select sel7=new Select(DamageInsurance);
+				sel7.selectByVisibleText("No Coverage");
+				Thread.sleep(2000);	
+				dr.findElement(By.xpath("//label[@class=\"ideal-radiocheck-label\"]//input[@id=\"EuroProtection\"]")).click();
+				WebElement CourtesyCar=dr.findElement(By.name("Courtesy Car"));
+				Select sel8=new Select(CourtesyCar);
+				sel8.selectByVisibleText("No");
 				
 				
+				
+				//Button Click
+				dr.findElement(By.id("nextselectpriceoption")).click();
 				//dr.get		
 				//dr.close();
 				//dr.quit();
