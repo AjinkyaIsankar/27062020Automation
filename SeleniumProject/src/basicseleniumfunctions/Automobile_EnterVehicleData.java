@@ -6,7 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Automobile_EnterVehicleData {
 
@@ -92,7 +94,7 @@ public class Automobile_EnterVehicleData {
 				Select sel7=new Select(DamageInsurance);
 				sel7.selectByVisibleText("No Coverage");
 				Thread.sleep(2000);	
-				dr.findElement(By.xpath("//label[@class=\"ideal-radiocheck-label\"]//input[@id=\"EuroProtection\"]")).click();
+				dr.findElement(By.xpath("//label[text()='Euro Protection']")).click();
 				WebElement CourtesyCar=dr.findElement(By.name("Courtesy Car"));
 				Select sel8=new Select(CourtesyCar);
 				sel8.selectByVisibleText("No");
@@ -101,6 +103,18 @@ public class Automobile_EnterVehicleData {
 				
 				//Button Click
 				dr.findElement(By.id("nextselectpriceoption")).click();
+				//Select Price Page
+				WebDriverWait wait=new WebDriverWait(dr,5);
+				wait.until(ExpectedConditions.visibilityOf(dr.findElement(By.xpath("//label[@class='choosePrice ideal-radiocheck-label'][2]"))));
+				dr.findElement(By.xpath("//label[@class='choosePrice ideal-radiocheck-label'][2]")).click();
+				dr.findElement(By.xpath("//button[@id='nextsendquote']")).click();
+				dr.findElement(By.xpath("//input[@id='email']")).sendKeys("ajinkyaisankar@gmail.com");
+				dr.findElement(By.xpath("//input[@id='username']")).sendKeys("AjinkyaIsankar");
+				dr.findElement(By.xpath("//input[@id='password']")).sendKeys("!@#QWEasd123");
+				dr.findElement(By.xpath("//input[@id='confirmpassword']")).sendKeys("!@#QWEasd123");
+				dr.findElement(By.xpath("//button[@id='sendemail']")).click();
+				
+				
 				//dr.get		
 				//dr.close();
 				//dr.quit();
